@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Simple Colour Game</title>
+<link rel="shortcut icon" type="image/png" href="https://i.imgur.com/3uk15HN.png"/>
+<meta charset="utf-8">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+img {
+	float: right;
+}
+body {
+	font-family: 'Fjalla One', sans-serif;
+}
+div {
+	width: 1100px;
+	height: 200px;
+	line-height: 200px;
+	position: absolute;
+	top: 20%;
+	margin-top: -150px;
+	left: 43%;
+	margin-left: -400px;
+	font-size: 100px;
+	text-transform: uppercase;
+	color: #ccc;
+	text-align: center;
+	vertical-align: middle;
+	text-shadow: 4px 4px black;
+}
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+.green {
+	background-color: white;
+	color: black;
+	border: 2px solid green;
+}
+.green:hover {
+	background-color: green;
+	color: white;
+}
+.purple {
+	background-color: white;
+	color: black;
+	border: 2px solid purple;
+}
+.purple:hover {
+	background-color: purple;
+	color: white;
+}
+.red {
+	background-color: white;
+	color: black;
+	border: 2px solid red;
+}
+.red:hover {
+	background-color: red;
+	color: white;
+}
+.pink {
+	background-color: white;
+	color: black;
+	border: 2px solid pink;
+}
+.pink:hover {
+	background-color: pink;
+	color: white;
+}
+.orange {
+	background-color: white;
+	color: black;
+	border: 2px solid orange;
+}
+.orange:hover {
+	background-color: orange;
+	color: white;
+}
+.yellow {
+	background-color: white;
+	color: black;
+	border: 2px solid yellow;
+}
+.yellow:hover {
+	background-color: yellow;
+	color: white;
+}
+.blue {
+	background-color: white;
+	color: black;
+	border: 2px solid blue;
+}
+.blue:hover {
+	background-color: blue;
+	color: white;
+}
+.brown {
+	background-color: white;
+	color: black;
+	border: 2px solid brown;
+}
+.brown:hover {
+	background-color: brown;
+	color: white;
+}
+</style>
+</head>
+<body>
+	<a href="https://github.com/DaSushiAsian" target="_blank"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMGMtNi42MjYgMC0xMiA1LjM3My0xMiAxMiAwIDUuMzAyIDMuNDM4IDkuOCA4LjIwNyAxMS4zODcuNTk5LjExMS43OTMtLjI2MS43OTMtLjU3N3YtMi4yMzRjLTMuMzM4LjcyNi00LjAzMy0xLjQxNi00LjAzMy0xLjQxNi0uNTQ2LTEuMzg3LTEuMzMzLTEuNzU2LTEuMzMzLTEuNzU2LTEuMDg5LS43NDUuMDgzLS43MjkuMDgzLS43MjkgMS4yMDUuMDg0IDEuODM5IDEuMjM3IDEuODM5IDEuMjM3IDEuMDcgMS44MzQgMi44MDcgMS4zMDQgMy40OTIuOTk3LjEwNy0uNzc1LjQxOC0xLjMwNS43NjItMS42MDQtMi42NjUtLjMwNS01LjQ2Ny0xLjMzNC01LjQ2Ny01LjkzMSAwLTEuMzExLjQ2OS0yLjM4MSAxLjIzNi0zLjIyMS0uMTI0LS4zMDMtLjUzNS0xLjUyNC4xMTctMy4xNzYgMCAwIDEuMDA4LS4zMjIgMy4zMDEgMS4yMy45NTctLjI2NiAxLjk4My0uMzk5IDMuMDAzLS40MDQgMS4wMi4wMDUgMi4wNDcuMTM4IDMuMDA2LjQwNCAyLjI5MS0xLjU1MiAzLjI5Ny0xLjIzIDMuMjk3LTEuMjMuNjUzIDEuNjUzLjI0MiAyLjg3NC4xMTggMy4xNzYuNzcuODQgMS4yMzUgMS45MTEgMS4yMzUgMy4yMjEgMCA0LjYwOS0yLjgwNyA1LjYyNC01LjQ3OSA1LjkyMS40My4zNzIuODIzIDEuMTAyLjgyMyAyLjIyMnYzLjI5M2MwIC4zMTkuMTkyLjY5NC44MDEuNTc2IDQuNzY1LTEuNTg5IDguMTk5LTYuMDg2IDguMTk5LTExLjM4NiAwLTYuNjI3LTUuMzczLTEyLTEyLTEyeiIvPjwvc3ZnPg=="></a>
+<h2 id="pointCount"></h2>
+<div>
+  <h1 id="colourText"></h1>
+  <buttons>
+    <button class="button green" onclick="countPoints('Green')">Green</button>
+    <button class="button purple" onclick="countPoints('Purple')">Purple</button>
+    <button class="button red" onclick="countPoints('Red')">Red</button>
+    <button class="button pink" onclick="countPoints('Pink')">Pink</button>
+    <button class="button orange" onclick="countPoints('Orange')">Orange</button>
+    <button class="button yellow" onclick="countPoints('Yellow')">Yellow</button>
+    <button class="button blue" onclick="countPoints('Blue')">Blue</button>
+    <button class="button brown" onclick="countPoints('Brown')">Brown</button>
+  </buttons>
+</div>
+	
+<script>
+	var colourArray = ["Green", "Purple", "Red", "Pink", "Orange", "Yellow", "Blue", "Brown"]
+var colourName, colourColour, colourBackground;
+var points = 0
+
+//Inital setup
+function setup() {
+  colour();
+  document.getElementById("pointCount").innerHTML = `Points: ${points}`;
+};
+
+//Randomize the colour of the elements
+function colour() {
+  colourName = colourArray[Math.floor(Math.random()*colourArray.length)];
+  colourColour = colourArray[Math.floor(Math.random()*colourArray.length)];
+  colourBackground = colourArray[Math.floor(Math.random()*colourArray.length)];
+  
+  while (colourName === colourColour || colourName === colourBackground || colourColour === colourBackground) {
+    colourName = colourArray[Math.floor(Math.random()*colourArray.length)];
+    colourColour = colourArray[Math.floor(Math.random()*colourArray.length)];
+    colourBackground = colourArray[Math.floor(Math.random()*colourArray.length)];
+  }
+  
+  document.getElementById("colourText").innerHTML = colourName;
+  document.getElementById("colourText").style.color = colourColour;
+  document.body.style.background = colourBackground;
+};
+
+//Code for counting point system
+function countPoints(pickedColour) {
+  if (pickedColour == colourColour) {
+    points += 1
+    document.getElementById("pointCount").innerHTML = `Points: ${points}`;
+  } else {
+    points += -1
+  }
+  document.getElementById("pointCount").innerHTML = `Points: ${points}`;
+  colour()
+};
+
+//Run all starting functions;
+setup();
+	</script>
+</body>
+</html>
